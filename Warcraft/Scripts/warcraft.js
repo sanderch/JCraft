@@ -6,7 +6,7 @@
     });
 });
 
-function WCWorld() {
+function JCWorld() {
     this.name = "WCCorld";
     var selected; // = new Array();
     this.select = function (obj) {
@@ -15,14 +15,14 @@ function WCWorld() {
         selected = obj;
     };
     this.addCharacter = function (obj) {
-        obj.WCContainer = this;
+        obj.JCContainer = this;
     };
 }
 // ftbl
-function WCObject(name, top, left, race) {
+function JCObject(name, top, left, race) {
     //debugger;
 
-    this.WCContainer = undefined; //  = new WCWorld();
+    this.JCContainer = undefined; //  = new JCWorld();
     this.name = name;
     this.div = document.createElement("div");
     var d = new Date();
@@ -47,9 +47,10 @@ function WCObject(name, top, left, race) {
     this.img.setAttribute("src", imgpath);
     this.div.appendChild(this.img);
     document.body.appendChild(this.div);
-    var wcContainer = this.WCContainer;
+    var wcContainer = this.JCContainer;
     var select1 = this.select;
     this.div.onclick = function () {
+        debugger;
         if (wcContainer != undefined) {
             alert(wcContainer.name + "adf");
             wcContainer.select(this);
@@ -63,8 +64,8 @@ function WCObject(name, top, left, race) {
 
 }
 
-var WCCharacter = function (name, top, left, race) {
-    var that = new WCObject(name, top, left, race);
+var JCCharacter = function (name, top, left, race) {
+    var that = new JCObject(name, top, left, race);
     var imgpath;
     that.race = race;
     if (race == undefined) {
@@ -74,12 +75,13 @@ var WCCharacter = function (name, top, left, race) {
     }
     that.img.setAttribute("src", imgpath);
 
-    var wcContainer = that.WCContainer;
+    var wcContainer = that.JCContainer;
 
     that.div.onclick = function () {
-        if (that.WCContainer != undefined) {
-            //alert(that.WCContainer.name + "sdf");
-            that.WCContainer.select(that);
+        debugger;
+        if (that.JCContainer != undefined) {
+            //alert(that.JCContainer.name + "sdf");
+            that.JCContainer.select(that);
             that.selectMe();
         } else { alert('no world'); }
     };
@@ -96,5 +98,5 @@ var WCCharacter = function (name, top, left, race) {
 };
 
 
-//WCCharacter.prototype = new WCObject(name, top, left, race);
+//JCCharacter.prototype = new JCObject(name, top, left, race);
 
