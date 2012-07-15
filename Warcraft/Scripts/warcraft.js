@@ -7,7 +7,7 @@
 });
 
 function JCWorld() {
-    this.name = "WCCorld";
+    this.name = "JCWorld";
     var selected; // = new Array();
     this.select = function (obj) {
         if (selected != undefined && selected.div != undefined)
@@ -47,13 +47,13 @@ function JCObject(name, top, left, race) {
     this.img.setAttribute("src", imgpath);
     this.div.appendChild(this.img);
     document.body.appendChild(this.div);
-    var wcContainer = this.JCContainer;
+    var jcContainer = this.JCContainer;
     var select1 = this.select;
     this.div.onclick = function () {
         debugger;
-        if (wcContainer != undefined) {
-            alert(wcContainer.name + "adf");
-            wcContainer.select(this);
+        if (jcContainer != undefined) {
+            alert(jcContainer.name + "adf");
+            jcContainer.select(this);
             select1();
         } else { alert('no world'); }
     };
@@ -75,7 +75,7 @@ var JCCharacter = function (name, top, left, race) {
     }
     that.img.setAttribute("src", imgpath);
 
-    var wcContainer = that.JCContainer;
+    var jcContainer = that.JCContainer;
 
     that.div.onclick = function () {
         debugger;
