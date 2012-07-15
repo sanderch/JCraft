@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>WC polygon</title>
+<script type="text/javascript" src="Scripts/jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="Scripts/warcraft.js"></script>
+    <style type="text/css">
+        body { background-image: url(Images/grass.png);
+               overflow: hidden;
+             }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+<script type="text/javascript">
+
+    var world = new WCWorld();
+    world.addCharacter(new WCCharacter("peasant", 300, 600, "Orc"));
+    world.addCharacter(new WCCharacter("peasant", 450, 500, "Human"));
+    
+    
+    var farm1 = new WCObject("farm", 100, 400, "Human");
+    var farm2 = new WCObject("farm", 200, 200, "Orc");
+    var char1 = new WCCharacter("peasant", 150, 80, "Human");
+    var mine1 = new WCObject("mine", 300, 250);
+
+    generate_stones();
+    
+    function generate_stones() {
+        var i;
+        var stones;
+        var smallStones = 50;
+        var bigStones = 20;
+        for (i = 1; i < smallStones; i++) {
+            stones = document.createElement("IMG");
+            stones.setAttribute("src", "Images/stones_on_grass2.png");
+            stones.setAttribute("style", "position: absolute;top:" + Math.random() * 1000 + "px;left:" + Math.random() * 1000 + "px;z-index:-1");
+            document.body.appendChild(stones);
+        }
+        for (i = 1; i < bigStones; i++) {
+            stones = document.createElement("IMG");
+            stones.setAttribute("src", "Images/stones_on_grass3.png");
+            stones.setAttribute("style", "position: absolute;top:" + Math.random() * 1000 + "px;left:" + Math.random() * 1000 + "px;z-index:-1");
+            document.body.appendChild(stones);
+        }
+    }
+
+</script>
+<a href="#" onclick="alert(world.selected.name + ' ' + world.selected.race);">who is selected</a>
+</body>
+</html>
