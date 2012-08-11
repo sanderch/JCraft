@@ -1,11 +1,8 @@
-﻿var world;
-
-$(document).ready(function () {
+﻿$(document).ready(function () {
     $(document).click(function () {
-        world = new JCWorld();
-        if (world != undefined) {
-            alert(world.selected);
-        }
+//        if (world != undefined) {
+//            alert('document click' + world.selected);
+//        }
     });
 });
 
