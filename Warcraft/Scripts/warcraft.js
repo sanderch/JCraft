@@ -1,5 +1,8 @@
-﻿$(document).ready(function () {
+﻿var world;
+
+$(document).ready(function () {
     $(document).click(function () {
+        world = new JCWorld();
         if (world != undefined) {
             alert(world.selected);
         }
@@ -62,9 +65,17 @@ function JCObject(name, top, left, race) {
         this.div.currentStyle.background = "red";
     };
 
+    this.GetX = function() {
+        return this.div.style.left;
+    };
+    
+    this.GetY = function() {
+        return this.div.style.top;
+    };
 }
 
 var JCCharacter = function (name, top, left, race) {
+    // debugger;
     var that = new JCObject(name, top, left, race);
     var imgpath;
     that.race = race;
@@ -75,26 +86,29 @@ var JCCharacter = function (name, top, left, race) {
     }
     that.img.setAttribute("src", imgpath);
 
-    var jcContainer = that.JCContainer;
-
     that.div.onclick = function () {
         debugger;
         if (that.JCContainer != undefined) {
             //alert(that.JCContainer.name + "sdf");
             that.JCContainer.select(that);
             that.selectMe();
-        } else { alert('no world'); }
+        } else {
+            alert('no world'); // fuuuu!
+        }
     };
 
     that.selectMe = function () {
+        debugger;
         that.div.style.backgroundColor = 'Red';
+        that.move(that.div.offsetLeft + 10 + 'px', that.div.offsetTop + 10 + 'px');
     };
 
     that.move = function (x, y) {
-        alert(x + y);
+        that.div.style.left = x;
+        that.div.style.top = y;
     };
 
-    return that;
+    return that; // inheritance huh?
 };
 
 
