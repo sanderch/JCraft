@@ -1,0 +1,13 @@
+.peasant{
+		width: 30px;
+	    height: 30px;
+	    background-position: -16px -8px;
+    	background-image: url("../Images/peasant.png");
+    	-webkit-animation: play .7s steps(5) infinite;
+
+}
+
+@-webkit-keyframes play {
+   from { background-position: -16px -8px; }
+     to { background-position: -16px -197px; }
+}
