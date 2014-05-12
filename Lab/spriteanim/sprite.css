@@ -1,13 +1,33 @@
-.peasant{
+.peasant {
 		width: 30px;
 	    height: 30px;
-	    background-position: -16px -8px;
-    	background-image: url("../Images/peasant.png");
-    	-webkit-animation: play .7s steps(5) infinite;
-
+	    background-position: 0px 0px;
+    	background-image: url("../Images/north.png");
+    	position: relative;
 }
 
-@-webkit-keyframes play {
-   from { background-position: -16px -8px; }
-     to { background-position: -16px -197px; }
+.peasant-move-n{
+    	-webkit-animation: sprite 1s steps(8) infinite, move_n 5s linear infinite;
 }
+
+@-webkit-keyframes sprite {
+    from { background-position: 0px 0px; }
+    to { background-position: 0px -240px; }
+}
+
+@-webkit-keyframes move_n {
+    0% { top:300px; }
+    100% { top:0px; }
+}
+
+/*@-webkit-keyframes play 
+{
+	0%: { top:8px;}
+	12%: { top:18px;}
+	25%: { top:28px;}
+	37%: { top:38px;}
+	50%: { top:48px;}
+	62%: { top:58px;}
+	75%: { top:68px;}
+	100%: { top:78px;}
+}*/
