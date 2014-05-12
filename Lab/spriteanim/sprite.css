@@ -4,6 +4,7 @@
 	    background-position: 0px 0px;
     	background-image: url("../Images/north.png");
     	position: relative;
+    	left: 300px;
 }
 
 .peasant-move-n{
