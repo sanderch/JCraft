@@ -17,8 +17,8 @@
 }
 
 @-webkit-keyframes move_n {
-    0% { top:300px; }
-    100% { top:0px; }
+    0% { top:500px; }
+    100% { top:200px; }
 }
 
 /*@-webkit-keyframes play 
